@@ -7,6 +7,13 @@ export class Fervex extends Drug {
 
     // Override
     update() {
+        this.benefitIncrease();
+        super.dateDecrease();
+        this.benefitToZero();
+        super.checkBenefit(this.benefit)
+    }
+
+    benefitIncrease() {
         this.benefit += 1;
 
         if (this.expiresIn <= 10) {
@@ -15,9 +22,11 @@ export class Fervex extends Drug {
         if (this.expiresIn <= 5) {
             this.benefit += 1;
         }
+    }
+
+    benefitToZero() {
         if (this.expiresIn < 0) {
             this.benefit = 0;
         }
-        this.expiresIn -= 1;
     }
 }

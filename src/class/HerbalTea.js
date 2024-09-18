@@ -7,12 +7,16 @@ export class HerbalTea extends Drug {
 
     // Override
     update() {
-        this.benefit += 1;
-
-        this.expiresIn -= 1;
+        this.benefitIncrease();
+        super.dateDecrease();
 
         if (this.expiresIn < 0) {
             this.benefit += 1;
         }
+        super.checkBenefit(this.benefit);
+    }
+
+    benefitIncrease() {
+        this.benefit += 1;
     }
 }

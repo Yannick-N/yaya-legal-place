@@ -1,7 +1,5 @@
 import { Pharmacy } from "./pharmacy";
 
-import { Drug } from "./class/Drug";
-
 import { Doliprane } from "./class/Doliprane";
 import { HerbalTea } from "./class/HerbalTea";
 import { Fervex } from "./class/Fervex";
@@ -25,7 +23,7 @@ for (let elapsedDays = 0; elapsedDays < 30; elapsedDays++) {
 
 /* eslint-disable no-console */
 fs.writeFile(
-  "output.json",
+  "yaya_output.json",
   JSON.stringify({ result: log }, null, 2).concat("\n"),
   (err) => {
     if (err) {

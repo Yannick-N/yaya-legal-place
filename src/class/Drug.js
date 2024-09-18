@@ -6,20 +6,30 @@ export class Drug {
     }
 
     update() {
-        if (this.benefit > 50) {
+        this.benefitDecrease();
+        this.dateDecrease();
+
+        if (this.expiresIn < 0) {
+            this.benefitDecrease();
+        }
+        this.checkBenefit(this.benefit);
+    }
+
+    checkBenefit(benefit) {
+        if (benefit > 50)
             this.benefit = 50;
-        }
+        else
+            this.benefit = benefit;
+    }
 
-        if (this.benefit > 0) {
-            this.benefit -= 1;
-        } else
-            this.benefit = 0;
-
+    dateDecrease() {
         this.expiresIn -= 1;
+    }
 
-        if (this.expiresIn < 0 && this.benefit > 0) {
+    benefitDecrease() {
+        if (this.benefit > 0)
             this.benefit -= 1;
-        }
-
+        else
+            this.benefit = 0;
     }
 }
