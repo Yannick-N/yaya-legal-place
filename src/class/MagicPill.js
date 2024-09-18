@@ -6,5 +6,5 @@ export class MagicPill extends Drug {
     }
 
     // Override
-    update() { }
+    updateBenefitValue() { }
 }

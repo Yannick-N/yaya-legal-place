@@ -6,8 +6,8 @@ export class HerbalTea extends Drug {
     }
 
     // Override
-    update() {
-        this.benefitIncrease();
+    updateBenefitValue() {
+        this.benefitUpdate();
         super.dateDecrease();
 
         if (this.expiresIn < 0) {
@@ -16,7 +16,8 @@ export class HerbalTea extends Drug {
         super.checkBenefit(this.benefit);
     }
 
-    benefitIncrease() {
+    // Override
+    benefitUpdate() {
         this.benefit += 1;
     }
 }

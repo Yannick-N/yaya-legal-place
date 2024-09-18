@@ -5,14 +5,17 @@ export class Drug {
         this.benefit = benefit;
     }
 
-    update() {
-        this.benefitDecrease();
+    updateBenefitValue() {
+        this.benefitUpdate();
         this.dateDecrease();
-
-        if (this.expiresIn < 0) {
-            this.benefitDecrease();
-        }
+        this.increaseTwice();
         this.checkBenefit(this.benefit);
+    }
+
+    increaseTwice() {
+        if (this.expiresIn < 0) {
+            this.benefitUpdate();
+        }
     }
 
     checkBenefit(benefit) {
@@ -26,7 +29,7 @@ export class Drug {
         this.expiresIn -= 1;
     }
 
-    benefitDecrease() {
+    benefitUpdate() {
         if (this.benefit > 0)
             this.benefit -= 1;
         else

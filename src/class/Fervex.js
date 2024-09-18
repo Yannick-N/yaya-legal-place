@@ -6,14 +6,15 @@ export class Fervex extends Drug {
     }
 
     // Override
-    update() {
-        this.benefitIncrease();
+    updateBenefitValue() {
+        this.benefitUpdate();
         super.dateDecrease();
         this.benefitToZero();
         super.checkBenefit(this.benefit)
     }
 
-    benefitIncrease() {
+    // Override
+    benefitUpdate() {
         this.benefit += 1;
 
         if (this.expiresIn <= 10) {
